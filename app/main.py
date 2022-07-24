@@ -10,7 +10,7 @@ from os import path
 
 from . import config
 from .dependencies import get_query_token, get_token_header
-from .routers import events, coupon
+from .routers import events, gift
 from .internal import admin
 
 g_conf = config.Settings()
@@ -53,8 +53,8 @@ app.include_router(
     dependencies=dep_list
     )
 app.include_router(
-    coupon.router,
-    tags=["coupons"],
+    gift.router,
+    tags=["gifts"],
     dependencies=dep_list
 )
 app.include_router(
