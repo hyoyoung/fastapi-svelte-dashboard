@@ -12,16 +12,6 @@ from ..utils import code_generator
 
 router = APIRouter()
 
-#models.Base.metadata.create_all(bind=engine)
-
-# 이벤트목록
-
-# 이벤트조회 및 쿠폰목록
-
-# 이벤트의 쿠폰 목록 다운로드
-
-# 이벤트의 쿠폰 발행 / 이벤트명, 쿠폰갯수, 시작일, 만료일, 
-
 @router.get("/events/")
 def read_events(offset: int = 0, limit: int = 100, db: Session = Depends(get_db), q: Optional[str] = None):
     events = crud.get_events(db=db, offset=offset, limit=limit)
